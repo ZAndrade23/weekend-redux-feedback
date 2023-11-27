@@ -41,6 +41,7 @@ function App() {
         <Feedback />
     </Route>
     <Route exact path="/">
+    <h1>Start feedback survey?</h1>
         <Home />
     </Route>
 
