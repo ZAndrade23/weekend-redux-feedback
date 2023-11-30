@@ -18,6 +18,7 @@ function App() {
         <h1 className='App-title'>Feedback!</h1>
         <h4>Don't forget it!</h4>
       </header>
+      <nav>
       <ul>
         <li><Link to="/feelings">How are you feeling today?</Link></li>
         <li><Link to="/content">How well are you understanding the content?</Link></li>
@@ -25,6 +26,7 @@ function App() {
         <li><Link to="/comments"> Any comments you want to leave?</Link></li>
         <li><Link to="/"> Home</Link></li>
       </ul>
+      </nav>
       <Route exact path="/feelings">
         <FeedbackFeelings />
       </Route>

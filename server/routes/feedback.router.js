@@ -19,6 +19,25 @@ router.get('/', (req, res) => {
 });
 
 // POST students
+router.post('/', (req, res) => {
+    const newReview =(req.body);
+    const sqlText = `INSERT INTO feedback ("feeling", "understanding", "support", "comments")
+                     VALUES($1, $2, $3, $4)`;
+    const queryValues = [
+       newReview.feelings ,
+       newReview.understanding,
+       newReview.support,
+       newReview.comments
+
+    ];
+    pool.query(sqlText, queryValues)
+    .then(() =>  {res.sendStatus(201);} )
+    .catch((err) => {
+      console.log('Error completing SELECT review query', err);
+      res.sendStatus(500);
+    });
+});
+    
 
 
 module.exports = router;
